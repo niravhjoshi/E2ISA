@@ -1,12 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
-//var ctrlHotels = require('../controllers/expense.controllers.js');
-/*
+var ctrlExpense = require('../controller/expense.controller.js');
+
 router
   .route('/expense')
-  .get(ctrlHotels.hotelsGetAll);
-
+  .get(ctrlExpense.GetAllExpenses);
+router
+    .route('/expenseadd')
+    .post(ctrlExpense.ExpAddOne);
+/*
 router
   .route('/hotels/:hotelId')
   .get(ctrlHotels.hotelsGetOne);
