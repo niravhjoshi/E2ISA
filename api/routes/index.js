@@ -12,7 +12,10 @@ router
     .post(ctrlExpense.ExpAddOne);
 router
     .route('/expense/:expId')
-    .get(ctrlExpense.GetOneExp);
+    .get(ctrlExpense.GetOneExp)
+    .put(ctrlExpense.UpdExpOne);
+
+
 /*
 router
   .route('/hotels/:hotelId')

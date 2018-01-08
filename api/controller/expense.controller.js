@@ -62,9 +62,23 @@ module.exports.GetAllExpenses = function (req,res) {
            .findById(expId)
            .exec(
             function(err,expdataone) {
-                res
-                    .status(200)
-                    .json(expdataone)
+                 var response  = {
+                    status:200,
+                    message:expdataone
+                };
+                 if(err){
+                     console.log("Error Finding Expense");
+                     response.status = 500;
+                     response.message =err;
+                 }
+                 else if (!expdataone){
+                     console.log("Expense ID did not found in DB",expId);
+                     response.status = 400;
+                     response.message = {"message":"Expense ID not found"+expId};
+                 }
+                 res
+                     .status(response.status)
+                     .json(response.message);
             });
 
    };
@@ -97,3 +111,55 @@ module.exports.GetAllExpenses = function (req,res) {
 
 
    };
+
+   // This method will be update expense
+module.exports.UpdExpOne = function (req,res) {
+    console.log("Entering into updating Expense");
+    var expId =  req.params.expId;
+    Expense
+        .findById(expId)
+        .exec(
+            function(err,expdataone) {
+                var response  = {
+                    status:200,
+                    message:expdataone
+                };
+                if(err){
+                    console.log("Error Finding Expense");
+                    response.status = 500;
+                    response.message =err;
+                }
+                else if (!expdataone){
+                    console.log("Expense ID did not found in DB",expId);
+                    response.status = 400;
+                    response.message = {"message":"Expense ID not found"+expId};
+                }
+                if(response.status != 200){
+                    res
+                        .status(response.status)
+                        .json(response.message);
+                }
+                else{
+                    expdataone.ExppersonName = req.body.ExppersonName;
+                    expdataone.ExpenseType = req.body.ExpenseType;
+                    expdataone.ExpenseAmt = req.body.ExpenseAmt;
+                    expdataone.ExpenseDate = req.body.ExpenseDate;
+                    expdataone.ExpenseComm = req.body.ExpenseComm;
+                    expdataone.save(function(err,expudpated){
+                        if(err){
+                            res
+                                .status(500)
+                                .json(err);
+                        }
+                        else{
+                            res
+                                .status(204)
+                                .json();
+                        }
+                    })
+                }
+
+            });
+
+
+};
