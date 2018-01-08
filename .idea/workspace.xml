@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d96bf5ac-9b6b-46d7-936d-a5dd9852bb61" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/E2ISA.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/api/controller/expense.controller.js" afterPath="$PROJECT_DIR$/api/controller/expense.controller.js" />
-      <change beforePath="$PROJECT_DIR$/api/data/._db.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/api/data/._earning.model.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/api/data/._expense.model.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/api/data/._invest.model.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/api/data/._share.model.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/api/routes/index.js" afterPath="$PROJECT_DIR$/api/routes/index.js" />
-      <change beforePath="$PROJECT_DIR$/public/._css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/._images" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/._index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/._jquery" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/css/._bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/css/._custom.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/images/._fullstacktraining_logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/jquery/._jquery-2.1.4.min.js" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -54,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="expense.controller.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="expense.controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/controller/expense.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="27" />
+            <state relative-caret-position="-312">
+              <caret line="56" column="11" lean-forward="true" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -67,18 +50,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+            <state relative-caret-position="264">
+              <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -92,9 +65,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/.gitignore" />
         <option value="$PROJECT_DIR$/api/routes/index.js" />
         <option value="$PROJECT_DIR$/api/controller/expense.controller.js" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/.gitignore" />
       </list>
     </option>
   </component>
@@ -233,12 +206,12 @@
       <updated>1515331178320</updated>
       <workItem from="1515331182599" duration="160000" />
       <workItem from="1515331484684" duration="242000" />
-      <workItem from="1515332123226" duration="8549000" />
+      <workItem from="1515332123226" duration="12379000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8951000" />
+    <option name="totallyTimeSpent" value="12781000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -359,26 +332,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/controller/expense.controller.js">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="27" />
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="18" />
+        <state relative-caret-position="264">
+          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/.gitignore">
+    <entry file="file://$PROJECT_DIR$/api/controller/expense.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+        <state relative-caret-position="-312">
+          <caret line="56" column="11" lean-forward="true" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
           <folding />
         </state>
       </provider>

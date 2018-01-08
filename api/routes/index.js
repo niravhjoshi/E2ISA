@@ -3,12 +3,16 @@ var router = express.Router();
 
 var ctrlExpense = require('../controller/expense.controller.js');
 
+//Expense App Routes
 router
   .route('/expense')
   .get(ctrlExpense.GetAllExpenses);
 router
     .route('/expenseadd')
     .post(ctrlExpense.ExpAddOne);
+router
+    .route('/expense/:expId')
+    .get(ctrlExpense.GetOneExp);
 /*
 router
   .route('/hotels/:hotelId')
