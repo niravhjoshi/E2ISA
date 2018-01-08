@@ -163,3 +163,43 @@ module.exports.UpdExpOne = function (req,res) {
 
 
 };
+
+//This method will delete one record from DB
+module.exports.DelOne = function (req,res) {
+    console.log("I am in Delete One method of Expense");
+    var expId = req.params.expId;
+    Expense
+        .findByIdAndRemove(expId)
+        .exec(
+            function (err, expdataone) {
+
+                if (err) {
+                    res
+                        .status(404)
+                        .json(err);
+                }
+                else {
+                    console.log("Expense Deleted ID:" + expId);
+                    res
+                        .status(204)
+                        .json();
+                }
+            });
+            };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

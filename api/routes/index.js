@@ -13,7 +13,8 @@ router
 router
     .route('/expense/:expId')
     .get(ctrlExpense.GetOneExp)
-    .put(ctrlExpense.UpdExpOne);
+    .put(ctrlExpense.UpdExpOne)
+    .delete(ctrlExpense.DelOne);
 
 
 /*
