@@ -82,6 +82,7 @@ module.exports.GetAllExpenses = function (req,res) {
             });
 
    };
+
 //This route will add expense in to DB
    module.exports.ExpAddOne = function (req,res) {
         console.log("Entering into inserting expense");
