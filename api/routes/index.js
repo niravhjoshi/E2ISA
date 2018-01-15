@@ -1,8 +1,17 @@
 var express = require('express');
 var router = express.Router();
+var multer = require('multer');
+var fs = require('fs');
+//var Grid = require('gridfs-stream');
+var fileUpload = require('express-fileupload');
+
 
 var ctrlExpense = require('../controller/expense.controller.js');
 var ctrlEarning = require('../controller/earning.controller.js');
+var ctrlInvest = require('../controller/invest.controller.js');
+
+var uploads =multer({ dest: './public/updImage/'});
+
 //Expense App Routes
 router
   .route('/expense')
@@ -39,7 +48,47 @@ router
     .delete(ctrlEarning.DelOne);
 
 
+//Invest App routes
 
+
+router
+    .route('/invest')
+    .get(ctrlInvest.GetAllInvestments);
+
+//Add one earning
+router
+    .route('/investadd')
+    .post(ctrlInvest.InvAddOne);
+
+//Update and delete and get one
+router
+    .route('/invest/:invID')
+    .get(ctrlInvest.GetOneInv)
+    .put(ctrlInvest.UpdInvOne)
+    .delete(ctrlInvest.DelOne);
+
+
+//Router file upload function
+
+router.post('/upload',function(req,res) {
+
+    if(!req.files){
+        return res.status(400).send('No files are uploaded');
+
+    }
+
+    var sampleFile = req.files.sampleFile;
+    var samplename = req.files.sampleFile.name;
+
+    sampleFile.mv('./public/updImage/some.png',function(err){
+        if(err)
+            return res.status(500).send(err);
+        res.send('File uploaded!'+samplename);
+
+    });
+
+
+});
 
 
 /*

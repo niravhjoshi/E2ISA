@@ -2,15 +2,15 @@ var mongoose  = require('mongoose');
 
 var investSchema= new mongoose.Schema({
 
-	InvesterName : {type:String, required : true},
-	InvestType: {type:String, required: true},
-	InvestAmt: {type:Number, required: true},
-	InvestStartDate: {type:Date, required: true},
-	InvestEndDate: {type:Date, required: true},
-	InvestDueDate: {type:Date, required: true},
-	InvestImage: { data: Buffer, contentType: String }
+	InvesterName : {type:String, required : false},
+	InvestType: {type:[String], required: false},
+	InvestAmt: {type:Number, required: false},
+	InvestStartDate: {type:Date, required: false},
+	InvestEndDate: {type:Date, required: false},
+	InvestDueDate: {type:Date, required: false},
+	InvestImage: { data: Buffer, contentType: String },
+	InvestmentComm:	{type:String}
 	
 });
-
 
 mongoose.model('Invest',investSchema);

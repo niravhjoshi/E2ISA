@@ -1,9 +1,12 @@
 var mongoose  = require('mongoose');
 var dburl = 'mongodb://localhost:27017/e2isa';
+var Grid = require('gridfs-stream');
+
 
 //Now to connect to DB using mongoose we will use this method
 
 mongoose.connect(dburl);
+
 
 mongoose.connection.on('connected',function(){
 	console.log('mongoose has connected to DB:-'+ dburl);
