@@ -1,5 +1,10 @@
 var mongoose  = require('mongoose');
 var Invest = mongoose.model('Invest');
+var fs =  require('fs');
+
+
+// img path
+var imgPath = './public/updImage/NiravProfilePic.PNG';
 
 // This method will get all Invest from DB
 module.exports.GetAllInvestments = function (req,res) {
@@ -86,6 +91,33 @@ module.exports.GetOneInv = function (req,res) {
 //This route will add Investment in to DB
 module.exports.InvAddOne = function (req,res) {
     console.log("Entering into inserting Investment");
+    var inv = new Invest({
+        InvesterName : req.body.InvesterName,
+        InvestType : req.body.InvestType,
+        InvestAmt : parseInt(req.body.InvestAmt,10),
+        InvestStartDate : req.body.InvestStartDate,
+        InvestEndDate : req.body.InvestEndDate,
+        InvestDueDate : req.body.InvestDueDate,
+        InvestmentComm : req.body.InvestmentComm
+    });
+    inv.InvestImage.data = fs.readFileSync(imgPath);
+    inv.InvestImage.contentType = 'image/PNG';
+    inv.save(function (err,inv) {
+
+        if(err){
+            console.log("Error while inserting Investment");
+            res
+                .status(400)
+                .json(err);
+        }
+        else {
+            console.log("Investment is added fine");
+            res
+                .status(201)
+                .json(inv);
+        }
+        });
+/*
     Invest
         .create({
             InvesterName : req.body.InvesterName,
@@ -94,10 +126,14 @@ module.exports.InvAddOne = function (req,res) {
             InvestStartDate : req.body.InvestStartDate,
             InvestEndDate : req.body.InvestEndDate,
             InvestDueDate : req.body.InvestDueDate,
-            InvestImage: req.body.InvestImage,
             InvestmentComm : req.body.InvestmentComm
 
-        },function (err,inv) {
+
+
+        });
+        Invest.InvestImage.data = fs.readFileSync(imgPath);
+        Invest.InvestImage.contentType = 'png';
+        Invest.save(function (err,inv) {
 
             if(err){
                 console.log("Error while inserting Investment");
@@ -112,7 +148,7 @@ module.exports.InvAddOne = function (req,res) {
                     .json(inv);
             }
         });
-
+*/
 
 };
 

@@ -2,15 +2,14 @@ var express = require('express');
 var router = express.Router();
 var multer = require('multer');
 var fs = require('fs');
-//var Grid = require('gridfs-stream');
-var fileUpload = require('express-fileupload');
+var upload =multer({ dest: './public/updImage/'});
+
 
 
 var ctrlExpense = require('../controller/expense.controller.js');
 var ctrlEarning = require('../controller/earning.controller.js');
 var ctrlInvest = require('../controller/invest.controller.js');
 
-var uploads =multer({ dest: './public/updImage/'});
 
 //Expense App Routes
 router
@@ -69,26 +68,34 @@ router
 
 
 //Router file upload function
+/*
 
 router.post('/upload',function(req,res) {
 
-    if(!req.files){
-        return res.status(400).send('No files are uploaded');
 
-    }
+var part = req.files.file;
+var writestream = gfs.createWriteStream({
+    filename: 'img_'+part.name,
+    mode : 'w',
+    content_type: part.mimeType
 
-    var sampleFile = req.files.sampleFile;
-    var samplename = req.files.sampleFile.name;
+});
 
-    sampleFile.mv('./public/updImage/some.png',function(err){
-        if(err)
-            return res.status(500).send(err);
-        res.send('File uploaded!'+samplename);
-
+writestream.on('close',function(file){
+    return res.status(200).send({
+        message : 'Sucess',
+        file : file
     });
 
 
 });
+
+writestream.write(part.data);
+writestream.end();
+});
+
+
+*/
 
 
 /*

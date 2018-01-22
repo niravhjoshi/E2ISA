@@ -8,9 +8,6 @@ var bodyParser = require('body-parser');
 var multer = require('multer');
 var fs = require('fs');
 var routes = require('./api/routes');
-var Grid = require('gridfs-stream');
-const fileUpload = require('express-fileupload');
-
 // Define the port to run on
 app.set('port', 3000);
 
@@ -28,8 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Enable parsing of posted forms
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//Using multer to upload file to server images
-app.use(fileUpload());
 
 //app.use('./public/images/updImage', express.static(__dirname,'./public/images/updImage'));
 //app.use(multer({dest: './public/images/updImage/'}))

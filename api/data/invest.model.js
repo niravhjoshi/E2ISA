@@ -14,3 +14,4 @@ var investSchema= new mongoose.Schema({
 });
 
 mongoose.model('Invest',investSchema);
+module.exports= investSchema;
